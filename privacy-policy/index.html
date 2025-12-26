@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="canonical" href="" /> -->
+    <meta
+      name="description"
+      content="Privacy policy for Rachael Cunningham's IT support services."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/input.css" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <title>RC | Privacy Policy</title>
+  </head>
+  <body class="min-h-screen w-auto">
+    <header
+      class="flex justify-between bg-teal-800 p-1 px-2 lg:p-4 sticky top-0 text-white"
+    >
+      <h1 class="brand text-left font-semibold text-xl md:text-3xl">
+        Rachael Cunningham
+      </h1>
+      <nav class="bg-teal-800 text-white flex gap-2 items-center lg:text-xl">
+        <a class="nav-link" href="../home/index.html#about">About</a>
+        <a class="nav-link" href="../home/index.html#services">Services</a>
+        <a class="nav-link" href="../home/index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="p-3 max-w-6xl self-center m-auto">
+      <h3>Privacy Policy</h3>
+      <iframe
+        src="https://docs.google.com/document/d/e/2PACX-1vRikg-ryMYveEz3WCHizN9BAvD5xCbmGsdtFoAjFvDGtSZAd6I9JPGIIeYWX3_JpldMEXsv-Vr3KNOb/pub?embedded=true"
+        class="w-full border-0 gdoc"
+        loading="lazy"
+      ></iframe>
+    </main>
+
+    <footer class="p-2 bg-teal-800 text-white mt-4 mx-auto">
+      <div class="max-w-6xl m-auto">
+        <div class="flex justify-center gap-4 text-sm">
+          <a href="../home/index.html#about">about</a>
+          <a href="../home/index.html#services">services</a>
+          <a href="../home/index.html#contact">contact</a>
+          <a href="/src/info/index.html">info</a>
+          <a href="/src/legal/index.html">legal</a>
+          <a href="/src/privacy-policy/index.html">privacy policy</a>
+        </div>
+        <p class="text-center text-sm mt-2">
+          &copy; <span id="date"></span> Rachael Cunningham IT Support
+        </p>
+      </div>
+    </footer>
+    <script>
+      const date = document.getElementById("date");
+      date.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
