@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
     ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -19,7 +20,7 @@
       --tw-inset-ring-color: initial;
       --tw-inset-ring-shadow: 0 0 #0000;
       --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-width: 0;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-scale-x: 1;
@@ -75,6 +76,22 @@
   }
 }
 @layer base {
+  @supports (not ((-webkit-appearance: -apple-pay-button))) or
+    (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentColor;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      ::placeholder {
+        color: currentColor;
+      }
+      @supports (color: color-mix(in lab, red, red)) {
+        ::placeholder {
+          color: color-mix(in oklab, currentcolor 50%, transparent);
+        }
+      }
+    }
+  }
   *,
   :after,
   :before,
@@ -326,6 +343,103 @@
 }
 @layer components;
 @layer utilities {
+  @supports (color: color-mix(in lab, red, red)) {
+    .shadow-red-500\/10 {
+      --tw-shadow-color: #fb2c361a;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .shadow-red-500\/10 {
+        --tw-shadow-color: color-mix(
+          in oklab,
+          color-mix(in oklab, var(--color-red-500) 10%, transparent)
+            var(--tw-shadow-alpha),
+          transparent
+        );
+      }
+    }
+  }
+  @media (min-width: 40rem) {
+    .sm\:mx-4 {
+      margin-inline: calc(var(--spacing) * 4);
+    }
+    .sm\:block {
+      display: block;
+    }
+    .sm\:hidden {
+      display: none;
+    }
+    .sm\:p-4 {
+      padding: calc(var(--spacing) * 4);
+    }
+    .sm\:text-5xl {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+    .sm\:text-xl {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  @media (min-width: 48rem) {
+    .md\:flex-1 {
+      flex: 1;
+    }
+    .md\:flex-row {
+      flex-direction: row;
+    }
+    .md\:text-3xl {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+    .md\:text-xl {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+    .md\:font-medium {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+  @media (min-width: 64rem) {
+    .lg\:my-12 {
+      margin-block: calc(var(--spacing) * 12);
+    }
+    .lg\:h-16 {
+      height: calc(var(--spacing) * 16);
+    }
+    .lg\:w-16 {
+      width: calc(var(--spacing) * 16);
+    }
+    .lg\:flex-col {
+      flex-direction: column;
+    }
+    .lg\:flex-row {
+      flex-direction: row;
+    }
+    .lg\:p-1 {
+      padding: calc(var(--spacing) * 1);
+    }
+    .lg\:p-4 {
+      padding: calc(var(--spacing) * 4);
+    }
+    .lg\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+    .lg\:text-5xl {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+    .lg\:text-xl {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  @media (min-width: 80rem) {
+    .xl\:mx-10 {
+      margin-inline: calc(var(--spacing) * 10);
+    }
+  }
   .sticky {
     position: sticky;
   }
@@ -539,6 +653,9 @@
     .sm\:hidden {
       display: none;
     }
+    .sm\:gap-2 {
+      gap: calc(var(--spacing) * 2);
+    }
     .sm\:p-4 {
       padding: calc(var(--spacing) * 4);
     }
@@ -557,6 +674,9 @@
     }
     .md\:flex-row {
       flex-direction: row;
+    }
+    .md\:gap-4 {
+      gap: calc(var(--spacing) * 4);
     }
     .md\:text-3xl {
       font-size: var(--text-3xl);
@@ -611,6 +731,111 @@
       margin-inline: calc(var(--spacing) * 10);
     }
   }
+}
+details summary {
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+}
+@media (hover: hover) {
+  .cta:hover {
+    --tw-scale-x: 105%;
+    --tw-scale-y: 105%;
+    --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 html {
   scroll-behavior: smooth;
@@ -714,180 +939,4 @@ label {
 }
 .gdoc {
   height: 140vh;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@import "tailwindcss";
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: bold;
-  list-style: none;
-}
-
-details summary {
-  display: flex;
-  justify-content: space-between; /* pushes text left, symbol right */
-  align-items: center;
-  cursor: pointer;
-}
-
-details summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-details summary::after {
-  content: "^";
-  display: inline-block; /* keeps it inline and transformable */
-  margin-left: 1em; /* spacing from text */
-  font-size: 1em; /* matches text size */
-  vertical-align: middle; /* keeps it aligned with text */
-  transition: transform 0.3s ease;
-  transform: rotate(180deg);
-}
-
-details[open] summary::after {
-  transform: rotate(0deg);
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-
-ul {
-  font-size: 1rem;
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-details {
-  background-color: rgb(219, 219, 219);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin: 0.25rem 0;
-}
-
-details > div > hr {
-  margin: 0.5rem 0;
-}
-
-.cta {
-  @apply bg-white rounded-lg p-2 text-teal-800 font-semibold hover:scale-105 transition-all;
-}
-
-.cta-secondary {
-  @apply bg-teal-800 rounded-lg p-1.5 text-white font-semibold border-3 border-white;
-}
-
-input, textarea, form {
-  @apply border-2 border-gray-300 rounded-md p-1 w-4/5;
-}
-
-select {
-  @apply border-2 border-gray-300 rounded-md w-4/5 py-1;
-}
-
-label {
-  @apply font-medium;
-}
-
-.gdoc {
-  height: calc(100vh * 1.4);
 }
