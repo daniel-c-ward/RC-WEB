@@ -941,7 +941,7 @@ label {
   height: 140vh;
 }
 
-service-card {
+.service-card {
   padding: 1rem;
   border-radius: 1rem;
   background-colour: var(--color-gray-300);
